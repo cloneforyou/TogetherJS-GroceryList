@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Grocery List App</title>
+    
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body ng-app>
+    <div class="container" ng-controller="GroceryListController">
+        <div class="row">
+            <div class="col-xs-12 page-header">
+                <h1>
+                    <i class="glyphicon glyphicon-shopping-cart"></i>Grocery List
+                    <small class="text-info">
+                        <button class="btn btn-success" onclick="TogetherJS(this); return false;">Start TogetherJS</button>
+                    </small>
+                </h1>
+            </div>
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-barcode"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="item..." ng-model="grocery.name"/>
+                    <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-usd"></i>
+                    </span>
+                    <input type="number" class="form-control" placeholder="Price..." ng-model="grocery.price"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" ng-click="add()">Add</button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <table class="table table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="grocery in list">
+                        <td class="col-xs-2">{{grocery.name}}</td>
+                        <td class="col-xs-2">${{grocery.price}}</td>
+                        <td class="col-xs-1"><button class="btn btn-xs btn-danger" ng-click="remove(grocery)">Remove</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://togetherjs.com/togetherjs-min.js"></script>
+    
+    <script src="js/model/GroceryItem.js"></script>
+    <script src="js/controller/GroceryListController.js"></script>
+    <script src="lib/angular.min.js"></script>
+</body>
+</html>
