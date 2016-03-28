@@ -1,4 +1,4 @@
-﻿var GroceryListController = function ($scope) {
+﻿angular.module('GroceryList').controller('GroceryListController', function ($scope) {
 
     $scope.grocery = new GroceryItem();
 
@@ -34,7 +34,7 @@
     $scope.removeGrocery = function (index) {
         $scope.list.splice(index, 1);
     }
-};
+});
 
 
 
