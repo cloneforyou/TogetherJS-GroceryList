@@ -8,6 +8,9 @@
         if ($scope.grocery.name == "")
             return;
 
+        if ($scope.grocery.quantity == "")
+            $scope.grocery.quantity = 1;
+
         if ($scope.grocery.price == "")
             $scope.grocery.price = 0;
 
@@ -23,6 +26,7 @@
     }
 
     $scope.remove = function (item) {
+
         var index = $scope.list.indexOf(item);
 
         if (TogetherJS.running)

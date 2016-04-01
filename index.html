@@ -20,13 +20,18 @@
             <div class="col-xs-12">
                 <div class="input-group">
                     <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-circle-arrow-right"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="quantity..." ng-model="grocery.quantity"/>
+                    <span class="input-group-addon">
                         <i class="glyphicon glyphicon-barcode"></i>
                     </span>
                     <input type="text" class="form-control" placeholder="item..." ng-model="grocery.name"/>
                     <span class="input-group-addon">
-                        <i class="glyphicon glyphicon-usd"></i>
+                        <i class="glyphicon glyphicon-usd"></i>/u
                     </span>
                     <input type="number" class="form-control" placeholder="Price..." ng-model="grocery.price"/>
+                    </input>
                     <span class="input-group-btn">
                         <button class="btn btn-primary" ng-click="add()">Add</button>
                     </span>
@@ -37,14 +42,18 @@
                 <table class="table table-responsive table-hover">
                     <thead>
                         <tr>
+                            <th>Quantity</th>
                             <th>Item</th>
-                            <th>Price</th>
+                            <th>Price Per Unit</th>
+                            <th>SubTotal</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tr ng-repeat="grocery in list">
+                        <td class="col-xs-2">{{grocery.quantity}}</td>
                         <td class="col-xs-2">{{grocery.name}}</td>
                         <td class="col-xs-2">${{grocery.price}}</td>
+                        <td class="col-xs-2">{{grocery.quantity * grocery.price}}</td>
                         <td class="col-xs-1"><button class="btn btn-xs btn-danger" ng-click="remove(grocery)">Remove</button></td>
                     </tr>
                 </table>
