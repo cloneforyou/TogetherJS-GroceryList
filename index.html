@@ -49,12 +49,12 @@
                             <th></th>
                         </tr>
                     </thead>
-                    <tr ng-repeat="grocery in list">
-                        <td class="col-xs-2">{{grocery.quantity}}</td>
-                        <td class="col-xs-2">{{grocery.name}}</td>
-                        <td class="col-xs-2">${{grocery.price}}</td>
-                        <td class="col-xs-2">{{grocery.quantity * grocery.price}}</td>
-                        <td class="col-xs-1"><button class="btn btn-xs btn-danger" ng-click="remove(grocery)">Remove</button></td>
+                    <tr ng-repeat="item in list">
+                        <td class="col-xs-2"><input type="text" ng-model="item.quantity"/></td>
+                        <td class="col-xs-2"><input type="text" ng-model="item.name"/></td>
+                        <td class="col-xs-2"><input type="text" ng-model="item.price"/></td>
+                        <td class="col-xs-2">${{item.quantity*item.price}}</td>
+                        <td class="col-xs-1"><button class="btn btn-xs btn-danger" ng-click="remove(item)">Remove</button></td>
                     </tr>
                 </table>
             </div>
