@@ -18,6 +18,7 @@
             TogetherJS.send({type:"grocery.add"});
 
         $scope.pushGrocery();
+        $scope.grocery = new GroceryItem();
     };
 
     $scope.pushGrocery = function () {
